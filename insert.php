@@ -10,8 +10,12 @@
             description,
             created
         ) VALUES (
-            "MySQL",
-            "MySQL is ... ",
+            "Mysql",
+            "Mysql is ..",
             NOW()
         )";
+    $result = mysqli_query($conn,$sql);
+    if($result == false) {
+        echo mysqli_error($conn);
+    }
 ?>
