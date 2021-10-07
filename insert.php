@@ -10,8 +10,8 @@
             description,
             created
         ) VALUES (
-            "Mysql",
-            "Mysql is ..",
+            `Mysql`,
+            `Mysql is ..`,
             NOW()
         )";
     $result = mysqli_query($conn,$sql);
