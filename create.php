@@ -9,7 +9,11 @@
         <ol>
             <li>HTML</li>
         </ol>
-        <a href="create.php">create</a>
+        <form action="process_create.php" method="POST">
+            <p><input type="text" name="title" placeholder="title"></p>
+            <p><textarea name="description" placeholder="description"></textarea></p>
+            <p><input type="submit"></p>
+        </form>
         <h2>Welcome</h2>
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
     </body>
