@@ -14,7 +14,7 @@
     );
     //sql문을 서버에 전달하고 변수에 값 담기
     if(isset($_GET['id'])) {
-        $filtered_id = mysqli_escape_string($conn,$_GET['id']);
+        $filtered_id = mysqli_real_escape_string($conn,$_GET['id']);
         $sql = "SELECT * FROM topic WHERE id={$filtered_id}";
         $result = mysqli_query($conn,$sql);
         $row = mysqli_fetch_array($result);
