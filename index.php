@@ -7,7 +7,9 @@
     <body>
         <h1>WEB</h1>
         <ol>
-            <li>HTML</li>
+            <?php  
+                $conn = mysqli_connect("127.0.0.1","root","h20048686","opentutorials");
+            ?>
         </ol>
         <a href="create.php">create</a>
         <h2>Welcome</h2>
