@@ -8,6 +8,14 @@
                 while($row = mysqli_fetch_array($result)){
                     $list = $list."<li><a href=\"index.php?id={$row['id']}\">{$row['title']}</a></li>";
                 }
+                //sql문을 서버에 전달하고 변수에 값 담기
+                $sql = "SELECT * FROM topic WHERE id={$_GET['id']}";
+                $result = mysqli_query($conn,$sql);
+                $row = mysqli_fetch_array($result);
+                $article = array(
+                    'title' => $row['title'], //배열의 인덱스가 숫자가 아닌 문자 title로 연관배열이라고 한다.
+                    'description' => $row['description']
+                );
             ?>
 <!DOCTYPE html>
 <html>
@@ -21,7 +29,7 @@
             <?= $list ?>
         </ol>
         <a href="create.php">create</a>
-        <h2>Welcome</h2>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        <h2><?=$article['title']?></h2>
+        <?=$article['description'];?>
     </body>
 </html>
