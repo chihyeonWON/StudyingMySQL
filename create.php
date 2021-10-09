@@ -18,10 +18,8 @@
         $sql = "SELECT * FROM topic WHERE id={$filtered_id}";
         $result = mysqli_query($conn,$sql);
         $row = mysqli_fetch_array($result);
-        $article = array(
-            'title' => $row['title'], //배열의 인덱스가 숫자가 아닌 문자 title로 연관배열이라고 한다.
-            'description' => $row['description']
-        );
+        $article['title'] = htmlspecialchars($row['title']);
+        $article['descrption'] = htmlspecialchars($row['description']);
     }
 ?>
 <!DOCTYPE html>
