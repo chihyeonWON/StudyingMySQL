@@ -8,6 +8,10 @@
     while($row = mysqli_fetch_array($result)){
         $list = $list."<li><a href=\"index.php?id={$row['id']}\">{$row['title']}</a></li>";
     }
+    $article = array(
+        'title' => 'Welcome',
+        'description' => 'Hello, web'
+    );
     //sql문을 서버에 전달하고 변수에 값 담기
     if(isset($_GET['id'])) {
         $sql = "SELECT * FROM topic WHERE id={$_GET['id']}";
