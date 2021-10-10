@@ -13,6 +13,9 @@
         'title' => 'Welcome',
         'description' => 'Hello, web'
     );
+
+    $update_link = '';
+
     //sql문을 서버에 전달하고 변수에 값 담기
     if(isset($_GET['id'])) {
         $filtered_id = mysqli_real_escape_string($conn, $_GET['id']);
@@ -21,6 +24,7 @@
         $row = mysqli_fetch_array($result);
         $article['title'] = htmlspecialchars($row['title']);
         $article['descrption'] = htmlspecialchars($row['description']);
+        $update_link = '<a href="update.php?id='.$_GET['id'].'">update</a>';
     }
 ?>
 <!DOCTYPE html>
@@ -35,6 +39,7 @@
             <?= $list ?>
         </ol>
         <a href="create.php">create</a>
+        <?=$update_link?>
         <h2><?=$article['title']?></h2>
         <?=$article['description'];?>
     </body>
