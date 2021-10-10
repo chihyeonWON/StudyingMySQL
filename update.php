@@ -23,7 +23,7 @@
         $result = mysqli_query($conn,$sql);
         $row = mysqli_fetch_array($result);
         $article['title'] = htmlspecialchars($row['title']);
-        $article['descrption'] = htmlspecialchars($row['description']);
+        $article['description'] = htmlspecialchars($row['description']);
         $update_link = '<a href="update.php?id='.$_GET['id'].'">update</a>';
     }
 ?>
@@ -39,8 +39,8 @@
             <?= $list ?>
         </ol>
         <form action="process_create.php" method="post">
-            <p><input type="text" name="title" placeholder="title"></p>
-            <p><textarea name="description" placeholder="description"></textarea></p>
+            <p><input type="text" name="title" placeholder="title" value="<?=$article['title']?>"></p>
+            <p><textarea name="description" placeholder="description"><?=$article['description']?></textarea></p>
             <p><input type="submit"></p>
         </form>
         <h2>Welcome</h2>

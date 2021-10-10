@@ -23,7 +23,7 @@
         $result = mysqli_query($conn,$sql);
         $row = mysqli_fetch_array($result);
         $article['title'] = htmlspecialchars($row['title']);
-        $article['descrption'] = htmlspecialchars($row['description']);
+        $article['description'] = htmlspecialchars($row['description']);
         $update_link = '<a href="update.php?id='.$_GET['id'].'">update</a>';
     }
 ?>
