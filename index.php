@@ -26,7 +26,12 @@
         $article['title'] = htmlspecialchars($row['title']);
         $article['description'] = htmlspecialchars($row['description']);
         $update_link = '<a href="update.php?id='.$_GET['id'].'">update</a>';
-        $delete_link = '<a href="delete_process.php?id='.$_GET['id'].'">delete</a>';
+        $delete_link = '
+            <form action="process_delete.php" method="POST">
+                <input type="hidden" name="id" value="'.$_GET['id'].'">
+                <input type="submit" value="delete">
+            </form>
+        ';
     }
 ?>
 <!DOCTYPE html>
