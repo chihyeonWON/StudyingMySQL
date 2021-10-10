@@ -1,10 +1,11 @@
 <?php
     $conn = mysqli_connect('127.0.0.1','root','h20048686','opentutorials');
 
+    settype($_POST['id'], 'integer');
     $filtered = array(
         'title' => mysqli_real_escape_string($conn,$_POST['title']),
         'description' => mysqli_real_escape_string($conn,$_POST['description']),
-        'id' => $_POST['id']
+        'id' => mysqli_real_escape_string($conn, $_POST['id'])
     );
     $sql = "
         UPDATE topic
