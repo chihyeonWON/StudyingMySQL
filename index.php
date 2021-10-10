@@ -26,7 +26,7 @@
         $article['title'] = htmlspecialchars($row['title']);
         $article['description'] = htmlspecialchars($row['description']);
         $update_link = '<a href="update.php?id='.$_GET['id'].'">update</a>';
-        $delete_link = '<a href="update.php?id='.$_GET['id'].'">delete</a>';
+        $delete_link = '<a href="delete_process.php?id='.$_GET['id'].'">delete</a>';
     }
 ?>
 <!DOCTYPE html>
