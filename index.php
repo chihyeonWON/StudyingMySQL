@@ -15,6 +15,7 @@
     );
 
     $update_link = '';
+    $delete_link = '';
 
     //sql문을 서버에 전달하고 변수에 값 담기
     if(isset($_GET['id'])) {
@@ -25,6 +26,7 @@
         $article['title'] = htmlspecialchars($row['title']);
         $article['description'] = htmlspecialchars($row['description']);
         $update_link = '<a href="update.php?id='.$_GET['id'].'">update</a>';
+        $delete_link = '<a href="update.php?id='.$_GET['id'].'">delete</a>';
     }
 ?>
 <!DOCTYPE html>
@@ -40,6 +42,7 @@
         </ol>
         <a href="create.php">create</a>
         <?=$update_link?>
+        <?=$delete_link?>
         <h2><?=$article['title']?></h2>
         <?=$article['description'];?>
     </body>
